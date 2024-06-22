@@ -19,7 +19,7 @@ public class ProducerCallbackDemo {
         SpringApplication.run(ProducerCallbackDemo.class, args);
     }
 
-    @Bean
+//    @Bean
     CommandLineRunner commandLineRunner(KafkaProducer<String, String> producer) {
         return args -> {
             // create topic
