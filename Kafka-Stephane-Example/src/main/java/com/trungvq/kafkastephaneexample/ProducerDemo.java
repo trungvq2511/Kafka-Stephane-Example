@@ -8,13 +8,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class KafkaStephaneExampleApplication {
+public class ProducerDemo {
 
     public static void main(String[] args) {
-        SpringApplication.run(KafkaStephaneExampleApplication.class, args);
+        SpringApplication.run(ProducerDemo.class, args);
     }
 
-    @Bean
+//    @Bean
     CommandLineRunner commandLineRunner(KafkaProducer<String, String> producer) {
         return args -> {
             // create topic
@@ -26,7 +26,7 @@ public class KafkaStephaneExampleApplication {
             // send data
             producer.send(producerRecord);
 
-//             producer send all data and block until done - synchronous
+            // producer send all data and block until done - synchronous
             producer.flush();
 
             // flush and close producer
